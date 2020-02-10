@@ -9,7 +9,8 @@ import (
 )
 
 func main() {
-	conn, err := net.Dial("tcp", "localhost:8000")
+	conn, err := net.Dial("tcp", "localhost:8001")
+	fmt.Println("dial localhost at 8001")
 	if err != nil {
 		log.Fatal(err)
 	}
