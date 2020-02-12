@@ -26,7 +26,7 @@ func main() {
 	//squarer
 	go func() {
 		for x := range naturals {
-			squares <- x*x
+			squares <- x * x
 		}
 
 		close(squares)
@@ -36,7 +36,7 @@ func main() {
 	for {
 		//这里使用 ok 来判断 chan squares 是否已经关闭并且读取完毕
 		//因为从一个已经关闭的 chan 读取数据的时候， 始终会返回 chan Type 的默认值
- 		x, ok := <-squares
+		x, ok := <-squares
 		if !ok {
 			break
 		}

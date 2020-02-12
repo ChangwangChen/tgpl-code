@@ -13,7 +13,7 @@ func counter(out chan<- int) {
 
 func squarer(in <-chan int, out chan<- int) {
 	for x := range in {
-		out <- x*x
+		out <- x * x
 	}
 	close(out)
 }

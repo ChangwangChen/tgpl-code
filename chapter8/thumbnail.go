@@ -11,7 +11,7 @@ func makeThumbnails(counts int) int64 {
 	sizes := make(chan int64)
 	var wg sync.WaitGroup
 
-	for i:=0; i< counts;i++ {
+	for i := 0; i < counts; i++ {
 		wg.Add(1)
 		//worker
 		go func() {

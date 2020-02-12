@@ -10,7 +10,7 @@ type IntSet struct {
 }
 
 func process(x int) (int, uint) {
-	return x/64, uint(x%64)
+	return x / 64, uint(x % 64)
 }
 
 func (s *IntSet) Has(x int) bool {

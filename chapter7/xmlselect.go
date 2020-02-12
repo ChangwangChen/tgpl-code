@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func  main() {
+func main() {
 	dec := xml.NewDecoder(os.Stdin)
 	var stack []string
 	for {

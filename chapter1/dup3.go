@@ -11,7 +11,7 @@ func main() {
 	counts := make(map[string]int)
 
 	//read file
-	for _,filename := range os.Args[1:] {
+	for _, filename := range os.Args[1:] {
 		data, err := ioutil.ReadFile(filename)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "dup3: %v\n", err)

@@ -9,10 +9,10 @@ import (
 )
 
 type Track struct {
-	Title string
+	Title  string
 	Artist string
-	Album string
-	Year int
+	Album  string
+	Year   int
 	Length time.Duration
 }
 
@@ -41,27 +41,26 @@ func printTracks(tracks []*Track) {
 //定义按照 Artist 排序的类型
 type byArtist []*Track
 
-func (x byArtist) Len() int { return len(x) }
+func (x byArtist) Len() int           { return len(x) }
 func (x byArtist) Less(i, j int) bool { return x[i].Artist < x[j].Artist }
-func (x byArtist) Swap(i, j int) { x[i], x[j] = x[j], x[i] }
+func (x byArtist) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
 
 //定义通用的排序类型
 type customSort struct {
-	t []*Track
+	t    []*Track
 	less func(x, y *Track) bool
 }
 
-func (c customSort) Len() int { return len(c.t) }
+func (c customSort) Len() int           { return len(c.t) }
 func (c customSort) Less(i, j int) bool { return c.less(c.t[i], c.t[j]) }
-func (c customSort) Swap(i, j int) { c.t[i], c.t[j] = c.t[j], c.t[i] }
-
+func (c customSort) Swap(i, j int)      { c.t[i], c.t[j] = c.t[j], c.t[i] }
 
 func main() {
-	var tracks = []*Track {
-		{"Go", "Delilah", "From the Roots Up", 2012, length("3m38s") },
-		{"Go", "Moby", "Moby", 1992, length("3m58s") },
-		{"Go Ahead", "Changwang", "As I Am", 2008, length("4m38s") },
-		{"Ready To Go", "Chen", "Smash", 2019, length("6m38s") },
+	var tracks = []*Track{
+		{"Go", "Delilah", "From the Roots Up", 2012, length("3m38s")},
+		{"Go", "Moby", "Moby", 1992, length("3m58s")},
+		{"Go Ahead", "Changwang", "As I Am", 2008, length("4m38s")},
+		{"Ready To Go", "Chen", "Smash", 2019, length("6m38s")},
 	}
 	printTracks(tracks)
 
@@ -73,7 +72,7 @@ func main() {
 
 	//使用 customSort 类型变量来减少类型的定义
 	byYear := customSort{
-		t:    tracks,
+		t: tracks,
 		less: func(x, y *Track) bool {
 			return x.Year < y.Year
 		},
@@ -82,7 +81,7 @@ func main() {
 	sort.Sort(byYear)
 	printTracks(byYear.t)
 
-	sort.Sort(customSort{ tracks, func(x, y *Track) bool {
+	sort.Sort(customSort{tracks, func(x, y *Track) bool {
 		return x.Length < y.Length
 	}})
 	printTracks(tracks)

@@ -29,7 +29,7 @@ func main() {
 
 	mustCopy(conn, os.Stdout)
 	conn.Close()
-	<- done
+	<-done
 }
 
 func mustCopy(dst io.Writer, src io.Reader) {

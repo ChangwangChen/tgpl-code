@@ -4,7 +4,7 @@ var deposits = make(chan int)
 var balances = make(chan int)
 
 func Deposits(amount int) { deposits <- amount }
-func Balance() int { return <- balances }
+func Balance() int        { return <-balances }
 
 func teller() {
 	var balance int

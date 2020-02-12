@@ -3,7 +3,7 @@ package bank
 import "sync"
 
 var (
-	mutex sync.Mutex
+	mutex   sync.Mutex
 	balance int
 )
 
@@ -13,7 +13,7 @@ func Deposit(amount int) {
 	deposit(amount)
 }
 
-func Balance() int  {
+func Balance() int {
 	mutex.Lock()
 	defer mutex.Unlock()
 	return balance

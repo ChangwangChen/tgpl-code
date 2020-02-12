@@ -11,7 +11,7 @@ func main() {
 	files := os.Args[1:]
 	if len(files) == 0 {
 		countLines(os.Stdin, counts)
-	}else{
+	} else {
 		for _, arg := range files {
 			f, err := os.Open(arg)
 			if err != nil {

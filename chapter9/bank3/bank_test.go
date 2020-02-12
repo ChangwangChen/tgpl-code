@@ -19,7 +19,7 @@ func TestBank(t *testing.T) {
 
 	n.Wait()
 
-	if got, want := bank.Balance(), (1000 + 1) * 1000 / 2; got != want {
+	if got, want := bank.Balance(), (1000+1)*1000/2; got != want {
 		t.Errorf("Balance = %d, want = %d", got, want)
 	}
 

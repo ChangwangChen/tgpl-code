@@ -11,7 +11,7 @@ type client chan<- string //单向通道
 
 var (
 	entering = make(chan client)
-	leaving = make(chan client)
+	leaving  = make(chan client)
 	messages = make(chan string)
 )
 

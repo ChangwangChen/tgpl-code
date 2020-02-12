@@ -67,7 +67,7 @@ func main() {
 	//启用新 goroutine 监听 StdIn， 接受取消信息
 	go func() {
 		os.Stdin.Read(make([]byte, 1)) //这里比较简陋， 任意的一个输入都当作取消的信息
-		close(done) //关闭 done chan 当作取消的信息
+		close(done)                    //关闭 done chan 当作取消的信息
 	}()
 
 	//遍历

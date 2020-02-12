@@ -11,9 +11,9 @@ type ZeroStructTest struct {
 
 //32 byte len
 type ContentStructTest struct {
-	n int //8 byte
+	n int    //8 byte
 	s string //16 byte
-	p *int //8 byte
+	p *int   //8 byte
 }
 
 //
@@ -35,7 +35,6 @@ func arrayFunc(arr [4]int) {
 	fmt.Printf("%p\n", &arr)
 	fmt.Println("[4]int: ", unsafe.Sizeof(arr))
 }
-
 
 //
 // slice structure:
@@ -82,7 +81,7 @@ func main() {
 	stringFunc(s)
 
 	fmt.Println("=====Array=====")
-	arr := [4]int{1,2,3,4}
+	arr := [4]int{1, 2, 3, 4}
 	fmt.Printf("%p\n", &arr)
 	arrayFunc(arr)
 
